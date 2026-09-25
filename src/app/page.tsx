@@ -203,15 +203,12 @@ function StoryboardHero() {
 
 function StoryboardCards() {
   const cards = [
-    { id: 'black-matte', name: 'Matte Black', src: '/designs/black-matte.jpg', textMode: 'light' },
-    { id: 'black-brushed', name: 'Brushed Black', src: '/designs/black-brushed.jpg', textMode: 'light' },
-    { id: 'gold-brushed', name: 'Brushed Gold', src: '/designs/gold-brushed.jpg', textMode: 'dark' },
-    { id: 'navy-matte', name: 'Matte Navy', src: '/designs/navy-matte.jpg', textMode: 'light' },
-    { id: 'navy-brushed', name: 'Brushed Navy', src: '/designs/navy-brushed.jpg', textMode: 'light' },
-    { id: 'rose-matte', name: 'Matte Rose', src: '/designs/rose-matte.jpg', textMode: 'dark' },
-    { id: 'rose-brushed', name: 'Brushed Rose', src: '/designs/rose-brushed.jpg', textMode: 'dark' },
-    { id: 'silver-matte', name: 'Matte Silver', src: '/designs/silver-matte.jpg', textMode: 'dark' },
-    { id: 'silver-brushed', name: 'Brushed Silver', src: '/designs/silver-brushed.jpg', textMode: 'dark' },
+    { id: 'black', name: 'Matte Black', src: '/designs/black.png' },
+    { id: 'silver', name: 'Matte Silver', src: '/designs/silver.jpg' },
+    { id: 'gold', name: 'Matte Gold', src: '/designs/gold.png' },
+    { id: 'rose-gold', name: 'Matte Rose Gold', src: '/designs/rosegold.jpg' },
+    { id: 'navy', name: 'Matte Navy', src: '/designs/navy.png' },
+    { id: 'cherry', name: 'Matte Cherry', src: '/designs/cherry.png' },
   ];
 
   return (
@@ -245,11 +242,6 @@ function StoryboardCards() {
             >
               <div className="relative w-full aspect-[1.586] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover:border-white/20 transition-all duration-500">
                 <Image src={card.src} alt={card.name} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none mix-blend-overlay">
-                  <div className={`text-2xl sm:text-3xl font-bold tracking-[0.2em] uppercase mb-1 ${card.textMode === 'light' ? 'text-white' : 'text-black'}`}>Tayz</div>
-                  <div className={`w-8 h-[2px] mb-3 ${card.textMode === 'light' ? 'bg-white/60' : 'bg-black/60'}`}></div>
-                  <div className={`font-sans tracking-widest text-sm uppercase ${card.textMode === 'light' ? 'text-white' : 'text-black'}`}>Your Name</div>
-                </div>
               </div>
               <div className="text-lg font-medium text-zinc-400 group-hover:text-white transition-colors duration-300">
                 {card.name}
