@@ -112,7 +112,7 @@ function HeroVisual() {
 
   return (
     <div 
-      className="relative w-full max-w-[320px] mx-auto sm:max-w-[360px] aspect-[9/19.5] [perspective:1200px] cursor-pointer group"
+      className="relative w-full max-w-[260px] mx-auto sm:max-w-[280px] lg:max-w-[300px] aspect-[9/19.5] [perspective:1200px] cursor-pointer group"
       onMouseEnter={handleHover}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleHover}
@@ -234,7 +234,7 @@ function StoryboardEditor() {
     <section className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[320px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
+          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
             <Image src="/storyboard/editor.png" alt="Tayz Profile Editor" fill className="object-cover object-top" />
           </FadeIn>
           <div className="order-1 md:order-2">
@@ -270,7 +270,7 @@ function StoryboardUpdate() {
           </p>
         </FadeIn>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
-          <FadeIn direction="right" delay={0.2} className="relative w-full max-w-[280px] aspect-[9/19.5] rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+          <FadeIn direction="right" delay={0.2} className="relative w-full max-w-[240px] lg:max-w-[260px] aspect-[9/19.5] rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
             <div className="absolute top-4 left-4 bg-zinc-900/80 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-zinc-400 z-10 border border-white/10">Before</div>
             <Image src="/storyboard/hero.png" alt="Before update" fill className="object-cover object-top grayscale-[30%] opacity-80" />
           </FadeIn>
@@ -291,7 +291,7 @@ function StoryboardUpdate() {
             </motion.div>
           </FadeIn>
           
-          <FadeIn direction="left" delay={0.6} className="relative w-full max-w-[280px] aspect-[9/19.5] rounded-2xl border border-[#0071e3]/40 overflow-hidden shadow-[0_0_80px_rgba(0,113,227,0.2)]">
+          <FadeIn direction="left" delay={0.6} className="relative w-full max-w-[240px] lg:max-w-[260px] aspect-[9/19.5] rounded-2xl border border-[#0071e3]/40 overflow-hidden shadow-[0_0_80px_rgba(0,113,227,0.2)]">
             <div className="absolute top-4 left-4 bg-[#0071e3] px-3 py-1 rounded-full text-xs font-semibold text-white z-10">After</div>
             <Image src="/storyboard/after-update.png" alt="After update" fill className="object-cover object-top" />
           </FadeIn>
@@ -351,7 +351,7 @@ function StoryboardConnections() {
               </p>
             </FadeIn>
           </div>
-          <FadeIn direction="left" delay={0.2} className="relative aspect-[9/19.5] max-w-[320px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
+          <FadeIn direction="left" delay={0.2} className="relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
             <Image src="/storyboard/connections.png" alt="Tayz Connections" fill className="object-cover object-top" />
           </FadeIn>
         </div>
@@ -365,7 +365,7 @@ function StoryboardAnalytics() {
     <section className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[320px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
+          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
             <Image src="/storyboard/analytics.png" alt="Tayz Analytics" fill className="object-cover object-top" />
           </FadeIn>
           <div className="order-1 md:order-2">
