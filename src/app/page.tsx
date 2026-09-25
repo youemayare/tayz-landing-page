@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { WAITLIST_URL } from '@/lib/constants';
 
 function Header() {
@@ -90,34 +91,10 @@ function ProductExperience() {
           When someone taps your Tayz card, their browser instantly opens your live profile. No apps to download, no accounts to create. Just your details, ready to save.
         </p>
         
-        <div className="relative w-full max-w-[320px] mx-auto h-[640px] bg-zinc-950 rounded-[3rem] border-8 border-zinc-800 shadow-2xl overflow-hidden">
-          {/* Sample Profile UI */}
-          <div className="h-full w-full bg-[#0a0a0a] p-6 flex flex-col relative">
-            <div className="w-full h-32 bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl mb-12 absolute top-0 left-0"></div>
-            
-            <div className="relative z-10 flex flex-col items-center mt-16">
-              <div className="w-24 h-24 rounded-full bg-zinc-800 border-4 border-[#0a0a0a] mb-4 shadow-xl"></div>
-              <h3 className="text-xl font-bold text-white mb-1">Alex Morgan</h3>
-              <p className="text-sm text-zinc-400 mb-6">Design Director at Studio</p>
-              
-              <button className="w-full py-3 bg-[#0071e3] text-white font-semibold rounded-xl mb-6">
-                Save Contact
-              </button>
-              
-              <div className="w-full space-y-3">
-                <div className="w-full p-4 bg-[#141414] rounded-xl flex items-center gap-4">
-                  <div className="w-6 h-6 bg-zinc-800 rounded-full"></div>
-                  <div className="h-2 w-32 bg-zinc-800 rounded"></div>
-                </div>
-                <div className="w-full p-4 bg-[#141414] rounded-xl flex items-center gap-4">
-                  <div className="w-6 h-6 bg-zinc-800 rounded-full"></div>
-                  <div className="h-2 w-24 bg-zinc-800 rounded"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="relative w-full max-w-[320px] mx-auto h-[640px] bg-zinc-950 rounded-[3rem] border-8 border-zinc-800 shadow-[0_0_80px_rgba(0,113,227,0.15)] overflow-hidden">
+          <Image src="/screenshots/profile-mobile.png" alt="Tayz Live Profile" fill className="object-cover object-top" />
         </div>
-        <p className="text-xs text-zinc-600 mt-8">Sample profile visualization</p>
+        <p className="text-xs text-zinc-600 mt-8">Actual Tayz recipient experience</p>
       </div>
     </section>
   );
@@ -210,6 +187,47 @@ function HowItWorks() {
         <p className="text-center text-zinc-500 mt-16 font-medium">
           No app needed for the person you meet.
         </p>
+      </div>
+    </section>
+  );
+}
+
+function PlatformFeatures() {
+  return (
+    <section className="py-32">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="text-center mb-24">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            The complete Tayz platform
+          </h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Manage your professional identity, track engagement, and keep your contact details updated in real-time.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-32">
+          <div className="order-2 md:order-1 rounded-2xl border border-white/10 overflow-hidden bg-[#0a0a0a] shadow-[0_0_50px_rgba(255,255,255,0.02)] relative aspect-[16/10]">
+            <Image src="/screenshots/dashboard.png" alt="Tayz Dashboard Analytics" fill className="object-cover object-left-top" />
+          </div>
+          <div className="order-1 md:order-2">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Real-time Analytics</h3>
+            <p className="text-lg text-zinc-400 mb-6 leading-relaxed">
+              Track exactly how often your card is tapped, view your unique visitors, and see where people are connecting with you globally. Turn every introduction into actionable insights.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Update On The Fly</h3>
+            <p className="text-lg text-zinc-400 mb-6 leading-relaxed">
+              Got promoted? Changed your number? Added a new social link? Update your profile instantly through the dashboard. Your metal card never needs to be replaced.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 overflow-hidden bg-[#0a0a0a] shadow-[0_0_50px_rgba(255,255,255,0.02)] relative aspect-[16/10]">
+            <Image src="/screenshots/editor.png" alt="Tayz Profile Editor" fill className="object-cover object-left-top" />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -379,6 +397,7 @@ export default function Home() {
       <ProductExperience />
       <Benefits />
       <HowItWorks />
+      <PlatformFeatures />
       <MetalCardShowcase />
       <PricingOffer />
       <FAQ />
