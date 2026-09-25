@@ -225,7 +225,7 @@ function StoryboardCards() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Choose from our collection of premium finishes. We recommend keeping it simple with just your name—so your card stays relevant even if your company or role changes. 
+            Choose from our collection of premium finishes. We recommend keeping it simple with just your nameâ€”so your card stays relevant even if your company or role changes. 
           </p>
           <p className="text-sm mt-4 text-zinc-500">
             Looking for custom company logos, colors or designs? Contact our team for custom orders.
@@ -349,6 +349,37 @@ function StoryboardUpdate() {
             <Image src="/storyboard/after-update.png" alt="After update" fill className="object-cover object-top" />
           </FadeIn>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function StoryboardCompatibility() {
+  return (
+    <section className="py-24 bg-[#141414] border-y border-white/5 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,113,227,0.05)_0%,transparent_50%)]" />
+      <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
+        <FadeIn>
+          <div className="flex items-center justify-center gap-12 mb-10">
+            <svg className="w-16 h-16 text-white/70 hover:text-white transition-colors duration-300" viewBox="0 0 384 512" fill="currentColor">
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+            </svg>
+            <div className="w-px h-16 bg-white/10" />
+            <svg className="w-20 h-20 text-white/70 hover:text-[#3DDC84] transition-colors duration-300" viewBox="0 0 512 512" fill="currentColor">
+              <path d="M325.3 234.3c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm-138.6 0c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm205.6-111.4l35.8-61.9c3.4-5.9 1-13.4-4.8-16.8-5.9-3.4-13.4-1-16.8 4.8l-36.9 63.8c-34.1-15.6-72.2-24.4-112.5-24.4s-78.4 8.8-112.5 24.4l-36.9-63.8c-3.4-5.9-10.9-8.2-16.8-4.8-5.9 3.4-8.2 10.9-4.8 16.8l35.8 61.9c-85 41-144.1 123.6-150.1 219.7H493c-6-96.1-65.1-178.7-150.1-219.7z"/>
+            </svg>
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            Seamless iOS & Android support.
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Tayz works instantly out of the box with almost all modern smartphones. Whether they use an iPhone or an Android, a single tap or scan is all it takes to share your profile. 
+          </p>
+        </FadeIn>
       </div>
     </section>
   );
@@ -516,7 +547,7 @@ function FinalCTA() {
 }
 
 function StoryboardFaq() {
-  const faqs = [
+    const faqs = [
     {
       question: "Do the people I meet need an app?",
       answer: "No app is required. When they tap your card or scan your QR code, your profile instantly opens in their phone's default web browser."
@@ -527,11 +558,15 @@ function StoryboardFaq() {
     },
     {
       question: "Are there any subscription fees?",
-      answer: "No. Purchasing your Tayz metal card gives you lifetime access to your digital profile and our core features with absolutely zero monthly fees."
+      answer: "Purchasing your Tayz metal card gives you lifetime access to your basic digital profile. Plus, every metal card comes with a full year of Tayz Pro for free! After the first year, there is a small monthly fee to keep the Pro features, but your core profile remains completely free for life."
     },
     {
-      question: "Does it work with older phones?",
-      answer: "Yes! While all modern smartphones have NFC built-in for the 'tap' feature, you can also share your profile via a QR code or by sending your custom profile link directly."
+      question: "Can I share my profile without my physical card?",
+      answer: "Yes. You can add your Tayz QR code directly to your Apple Wallet or Google Wallet, or simply save it to your phone's photo gallery for quick access anytime."
+    },
+    {
+      question: "What if there is no internet connection?",
+      answer: "If you or the other person are completely offline, you can present your Offline QR code. When scanned, it instantly saves your contact card to their phone—no internet required!"
     },
     {
       question: "Can I get a custom logo on my card?",
@@ -588,6 +623,7 @@ export default function Home() {
       <StoryboardStyles />
       <StoryboardEditor />
       <StoryboardUpdate />
+      <StoryboardCompatibility />
       <StoryboardShare />
       <StoryboardConnections />
       <StoryboardAnalytics />
