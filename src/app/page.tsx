@@ -234,14 +234,14 @@ function StoryboardCards() {
           {cards.map((card, idx) => (
             <motion.div 
               key={card.id}
-              className="snap-center shrink-0 w-[300px] sm:w-[400px] flex flex-col items-center gap-6 group cursor-pointer"
+              className="snap-center shrink-0 w-[85vw] sm:w-[500px] md:w-[600px] flex flex-col items-center gap-6 group cursor-pointer"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.05, duration: 0.6, ease: "easeOut" }}
             >
-              <div className="relative w-full aspect-[1.586] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover:border-white/20 transition-all duration-500">
-                <Image src={card.src} alt={card.name} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover:border-white/20 transition-all duration-500">
+                <Image src={card.src} alt={card.name} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
               </div>
               <div className="text-lg font-medium text-zinc-400 group-hover:text-white transition-colors duration-300">
                 {card.name}
