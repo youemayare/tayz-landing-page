@@ -221,34 +221,34 @@ function StoryboardCards() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Choose from our collection of premium finishes. We recommend keeping it simple with just your name—so your card stays relevant even if your company or role changes. 
+            Choose from our collection of premium finishes. We recommend keeping it simple with just your name—so your card stays relevant even if your company or role changes.
           </p>
           <p className="text-sm mt-4 text-zinc-500">
-            Looking for custom company logos? Contact our team for bespoke orders.
+            Looking for custom company logos, colors or designs? Contact our team for custom  orders.
           </p>
         </FadeIn>
       </div>
 
-      <div className="relative w-full flex overflow-x-auto pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        <div className="flex gap-8 px-6 md:px-[calc(50vw-200px)] w-max">
-          {cards.map((card, idx) => (
-            <motion.div 
-              key={card.id}
-              className="snap-center shrink-0 w-[85vw] sm:w-[500px] md:w-[600px] flex flex-col items-center gap-6 group cursor-pointer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: idx * 0.05, duration: 0.6, ease: "easeOut" }}
+      <div className="relative w-full overflow-hidden pb-12 cursor-pointer group/carousel">
+        <motion.div 
+          className="flex w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+        >
+          {[...cards, ...cards].map((card, idx) => (
+            <div 
+              key={`${card.id}-${idx}`}
+              className="shrink-0 w-[85vw] sm:w-[500px] md:w-[600px] flex flex-col items-center gap-6 px-4 group/card"
             >
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover:border-white/20 transition-all duration-500">
-                <Image src={card.src} alt={card.name} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover/card:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover/card:border-white/20 transition-all duration-500">
+                <Image src={card.src} alt={card.name} fill className="object-cover group-hover/card:scale-105 transition-transform duration-1000" />
               </div>
-              <div className="text-lg font-medium text-zinc-400 group-hover:text-white transition-colors duration-300">
+              <div className="text-lg font-medium text-zinc-400 group-hover/card:text-white transition-colors duration-300">
                 {card.name}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -266,7 +266,7 @@ function StoryboardStyles() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-              Structurally distinct layouts crafted for different professions, not just simple color swaps. Find the one that matches your brand.
+              Structurally distinct layouts crafted for different professions, not just simple color swaps. Find the one that matches your vibe.
             </p>
           </FadeIn>
         </div>
