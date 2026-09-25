@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import { useState, useEffect } from 'react';
 import { WAITLIST_URL } from '@/lib/constants';
 
@@ -203,7 +204,7 @@ function StoryboardHero() {
 }
 
 function StoryboardCards() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [WheelGesturesPlugin()]);
 
   const cards = [
     { id: 'black', name: 'Matte Black', src: '/designs/black.png' },
@@ -514,6 +515,54 @@ function FinalCTA() {
   );
 }
 
+function StoryboardFaq() {
+  const faqs = [
+    {
+      question: "Do the people I meet need an app?",
+      answer: "No app is required. When they tap your card or scan your QR code, your profile instantly opens in their phone's default web browser."
+    },
+    {
+      question: "Can I update my details after ordering?",
+      answer: "Yes, always. Your Tayz card links to a dynamic digital profile. You can update your job title, links, and contact info instantly through your dashboard—no need to buy a new card."
+    },
+    {
+      question: "Are there any subscription fees?",
+      answer: "No. Purchasing your Tayz metal card gives you lifetime access to your digital profile and our core features with absolutely zero monthly fees."
+    },
+    {
+      question: "Does it work with older phones?",
+      answer: "Yes! While all modern smartphones have NFC built-in for the 'tap' feature, you can also share your profile via a QR code or by sending your custom profile link directly."
+    },
+    {
+      question: "Can I get a custom logo on my card?",
+      answer: "Absolutely. While we recommend sticking to just your name for longevity, we do accept bespoke orders for company logos and custom designs. Just contact our team."
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-[#141414] border-t border-white/5 relative z-10">
+      <div className="container mx-auto px-6 max-w-3xl">
+        <FadeIn className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            Frequently asked questions
+          </h2>
+        </FadeIn>
+        
+        <div className="space-y-6">
+          {faqs.map((faq, idx) => (
+            <FadeIn key={idx} delay={idx * 0.1} direction="up">
+              <div className="bg-[#0a0a0a] rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-colors">
+                <h3 className="text-xl font-medium text-white mb-3">{faq.question}</h3>
+                <p className="text-zinc-400 leading-relaxed">{faq.answer}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="py-12 border-t border-white/5 bg-[#0a0a0a]">
@@ -543,6 +592,7 @@ export default function Home() {
       <StoryboardConnections />
       <StoryboardAnalytics />
       <PricingOffer />
+      <StoryboardFaq />
       <FinalCTA />
       <Footer />
     </main>
