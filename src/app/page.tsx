@@ -39,9 +39,9 @@ function Hero() {
             A premium metal card that opens your live professional profile with a tap or scan. Share who you are, stay up to date, and make every introduction count.
           </p>
           <div className="mb-8 p-6 rounded-2xl bg-[#141414] border border-white/5">
-            <p className="text-white font-medium mb-1">Founding Circle price: AED 299</p>
-            <p className="text-zinc-500 line-through text-sm">Planned regular price: AED 499</p>
-            <p className="text-[#60a5fa] text-sm mt-3 font-medium">Save AED 200 · Approximately 40% off</p>
+            <p className="text-white font-medium mb-1">Founding Circle Access</p>
+            <p className="text-zinc-400 text-sm mt-2">Join today to secure approximately 40% off the planned regular price.</p>
+            <p className="text-[#60a5fa] text-sm mt-3 font-medium">Exclusive early-bird discount</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <a
@@ -258,24 +258,17 @@ function PricingOffer() {
         
         <div className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 md:p-12 max-w-2xl mx-auto shadow-2xl">
           <div className="flex flex-col items-center mb-8 pb-8 border-b border-white/5">
-            <div className="flex justify-between w-full max-w-sm mb-4 text-zinc-400">
-              <span>Planned regular price</span>
-              <span className="line-through">AED 499</span>
-            </div>
-            <div className="flex justify-between w-full max-w-sm text-2xl md:text-3xl font-bold text-white">
-              <span>Founding Circle price</span>
-              <span>AED 299</span>
-            </div>
-            <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0071e3]/10 text-[#60a5fa] font-medium text-sm">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Founding Circle Membership</h3>
+            <div className="mt-2 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0071e3]/10 text-[#60a5fa] font-medium text-sm">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Save AED 200 · Approximately 40%
+              Approximately 40% off the planned regular price
             </div>
           </div>
           
           <p className="text-zinc-400 leading-relaxed mb-8">
-            Join the Founding Circle for early access to the Tayz Metal Card at AED 299. We’ll notify you when Tayz is ready to launch. Joining is free, and you can decide whether to order then.
+            Join the Founding Circle for early access to the Tayz Metal Card at an exclusive discounted price. We’ll notify you when Tayz is ready to launch. Joining is free, and you can decide whether to order then.
           </p>
           
           <a
@@ -343,7 +336,7 @@ function FinalCTA() {
           Make your next introduction count.
         </h2>
         <p className="text-lg md:text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-          Join the Tayz Founding Circle for access to the Metal Card at AED 299 instead of the planned AED 499 regular price.
+          Join the Tayz Founding Circle for access to the Metal Card at an exclusive early-bird discount of approximately 40% off the planned regular price.
         </p>
         <div className="flex flex-col items-center gap-6">
           <a
