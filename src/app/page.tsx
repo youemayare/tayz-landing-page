@@ -22,6 +22,26 @@ function FadeIn({ children, delay = 0, direction = 'up', className = '' }: { chi
   );
 }
 
+function CtaButton({ children, href, className = "" }: { children: React.ReactNode, href: string, className?: string }) {
+  return (
+    <motion.a
+      href={href}
+      className={`relative inline-flex items-center justify-center overflow-hidden font-semibold text-white bg-[#0071e3] transition-colors hover:bg-[#005bb8] shadow-[0_0_40px_rgba(0,113,227,0.2)] hover:shadow-[0_0_60px_rgba(0,113,227,0.4)] ${className}`}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
+    >
+      <span className="relative z-10">{children}</span>
+      <motion.div
+        className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-[-20deg]"
+        initial={{ x: "-200%" }}
+        whileHover={{ x: "200%" }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      />
+    </motion.a>
+  );
+}
+
 function Header() {
   return (
     <motion.header 
@@ -33,12 +53,12 @@ function Header() {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <div className="text-xl font-bold tracking-tight text-white">TAYZ</div>
         <div>
-          <a
+          <CtaButton
             href={WAITLIST_URL}
-            className="text-sm font-medium text-white bg-[#0071e3] px-4 py-2 rounded-full hover:bg-[#005bb8] transition-colors"
+            className="text-sm px-4 py-2 rounded-full"
           >
             Join the Founding Circle
-          </a>
+          </CtaButton>
         </div>
       </div>
     </motion.header>
@@ -104,7 +124,7 @@ function HeroVisual() {
           initial={{ opacity: 0 }}
           animate={screenControls}
         >
-          <Image src="/storyboard/hero.png" alt="Tayz Live Profile" fill className="object-cover object-top" />
+          <Image src="/storyboard/layout-canvas.png" alt="Tayz Live Profile" fill className="object-cover object-top" />
         </motion.div>
         
         {/* Helper text before hover */}
@@ -162,12 +182,12 @@ function StoryboardHero() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                <a
+                <CtaButton
                   href={WAITLIST_URL}
-                  className="inline-flex justify-center text-base font-semibold text-white bg-[#0071e3] px-8 py-4 rounded-full hover:bg-[#005bb8] transition-colors shadow-[0_0_40px_rgba(0,113,227,0.2)] hover:shadow-[0_0_60px_rgba(0,113,227,0.3)] hover:scale-105 active:scale-95 duration-200"
+                  className="text-base px-8 py-4 rounded-full"
                 >
                   Get Founding Circle access
-                </a>
+                </CtaButton>
                 <p className="text-sm text-zinc-500 font-medium">Exclusive early-bird pricing</p>
               </div>
             </FadeIn>
@@ -397,12 +417,12 @@ function PricingOffer() {
               Join the Founding Circle for early access to the Tayz Metal Card at an exclusive discounted price. We'll notify you when Tayz is ready to launch. Joining is free, and you can decide whether to order then.
             </p>
             
-            <a
+            <CtaButton
               href={WAITLIST_URL}
-              className="inline-flex w-full justify-center text-base font-semibold text-white bg-[#0071e3] px-8 py-4 rounded-xl hover:bg-[#005bb8] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,113,227,0.4)] active:scale-[0.98]"
+              className="text-base px-8 py-4 w-full rounded-xl"
             >
               Get Founding Circle access
-            </a>
+            </CtaButton>
           </div>
         </FadeIn>
       </div>
@@ -426,14 +446,12 @@ function FinalCTA() {
         </FadeIn>
         <FadeIn delay={0.2}>
           <div className="flex flex-col items-center gap-6">
-            <motion.a
+            <CtaButton
               href={WAITLIST_URL}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex justify-center text-lg font-semibold text-white bg-[#0071e3] px-10 py-5 rounded-full hover:bg-[#005bb8] transition-colors shadow-[0_0_40px_rgba(0,113,227,0.2)] hover:shadow-[0_0_60px_rgba(0,113,227,0.3)]"
+              className="text-lg px-10 py-5 rounded-full"
             >
               Join the Founding Circle
-            </motion.a>
+            </CtaButton>
             <p className="text-sm text-zinc-500 max-w-sm mx-auto">
               Free to join. We'll notify you when Tayz launches. No payment today and no obligation to buy.
             </p>
