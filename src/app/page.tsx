@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
+import useEmblaCarousel from 'embla-carousel-react';
 import { useState, useEffect } from 'react';
 import { WAITLIST_URL } from '@/lib/constants';
 
@@ -202,6 +203,8 @@ function StoryboardHero() {
 }
 
 function StoryboardCards() {
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true });
+
   const cards = [
     { id: 'black', name: 'Matte Black', src: '/designs/black.png' },
     { id: 'silver', name: 'Matte Silver', src: '/designs/silver.jpg' },
@@ -221,34 +224,30 @@ function StoryboardCards() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Choose from our collection of premium finishes. We recommend keeping it simple with just your name—so your card stays relevant even if your company or role changes.
+            Choose from our collection of premium finishes. We recommend keeping it simple with just your name—so your card stays relevant even if your company or role changes. 
           </p>
           <p className="text-sm mt-4 text-zinc-500">
-            Looking for custom company logos, colors or designs? Contact our team for custom  orders.
+            Looking for custom company logos, colors or designs? Contact our team for custom orders.
           </p>
         </FadeIn>
       </div>
 
-      <div className="relative w-full overflow-hidden pb-12 cursor-pointer group/carousel">
-        <motion.div 
-          className="flex w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ ease: "linear", duration: 30, repeat: Infinity }}
-        >
-          {[...cards, ...cards].map((card, idx) => (
+      <div className="overflow-hidden pb-12 cursor-grab active:cursor-grabbing" ref={emblaRef}>
+        <div className="flex touch-pan-y">
+          {cards.map((card) => (
             <div 
-              key={`${card.id}-${idx}`}
-              className="shrink-0 w-[85vw] sm:w-[500px] md:w-[600px] flex flex-col items-center gap-6 px-4 group/card"
+              key={card.id}
+              className="flex-[0_0_85vw] sm:flex-[0_0_500px] md:flex-[0_0_600px] min-w-0 flex flex-col items-center gap-6 px-4 md:px-8 group/card"
             >
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover/card:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover/card:border-white/20 transition-all duration-500">
-                <Image src={card.src} alt={card.name} fill className="object-cover group-hover/card:scale-105 transition-transform duration-1000" />
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover/card:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover/card:border-white/20 transition-all duration-500 select-none">
+                <Image src={card.src} alt={card.name} fill className="object-cover group-hover/card:scale-105 transition-transform duration-1000 pointer-events-none" draggable={false} />
               </div>
               <div className="text-lg font-medium text-zinc-400 group-hover/card:text-white transition-colors duration-300">
                 {card.name}
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -357,7 +356,7 @@ function StoryboardUpdate() {
 function StoryboardShare() {
   const methods = [
     { title: "NFC Tap", desc: "A simple tap on any modern smartphone instantly opens your profile." },
-    { title: "QR Code", desc: "Share your profile with a QR code. A useful fallback when NFC reading is unavailable." },
+    { title: "QR Code", desc: "Share your profile with a QR code. You can also add it to your apple/google wallet." },
     { title: "Profile Link", desc: "Share your custom URL directly in your email signature or social bio." }
   ];
 
