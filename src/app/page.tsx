@@ -17,7 +17,7 @@ function Header() {
         <div>
           <a
             href={WAITLIST_URL}
-            className="text-sm font-medium text-black bg-white px-4 py-2 rounded-full hover:bg-zinc-200 transition-colors"
+            className="text-sm font-medium text-white bg-[#0071e3] px-4 py-2 rounded-full hover:bg-[#005bb8] transition-colors"
           >
             Join the Founding Circle
           </a>
@@ -41,12 +41,12 @@ function Hero() {
           <div className="mb-8 p-6 rounded-2xl bg-[#141414] border border-white/5">
             <p className="text-white font-medium mb-1">Founding Circle price: AED 299</p>
             <p className="text-zinc-500 line-through text-sm">Planned regular price: AED 499</p>
-            <p className="text-amber-500/90 text-sm mt-3 font-medium">Save AED 200 · Approximately 40% off</p>
+            <p className="text-[#60a5fa] text-sm mt-3 font-medium">Save AED 200 · Approximately 40% off</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <a
               href={WAITLIST_URL}
-              className="inline-flex justify-center text-base font-semibold text-black bg-white px-8 py-4 rounded-full hover:bg-zinc-200 transition-colors"
+              className="inline-flex justify-center text-base font-semibold text-white bg-[#0071e3] px-8 py-4 rounded-full hover:bg-[#005bb8] transition-colors"
             >
               Join the Founding Circle
             </a>
@@ -100,7 +100,7 @@ function ProductExperience() {
               <h3 className="text-xl font-bold text-white mb-1">Alex Morgan</h3>
               <p className="text-sm text-zinc-400 mb-6">Design Director at Studio</p>
               
-              <button className="w-full py-3 bg-white text-black font-semibold rounded-xl mb-6">
+              <button className="w-full py-3 bg-[#0071e3] text-white font-semibold rounded-xl mb-6">
                 Save Contact
               </button>
               
@@ -266,7 +266,7 @@ function PricingOffer() {
               <span>Founding Circle price</span>
               <span>AED 299</span>
             </div>
-            <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 text-amber-500 font-medium text-sm">
+            <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0071e3]/10 text-[#60a5fa] font-medium text-sm">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
@@ -280,7 +280,7 @@ function PricingOffer() {
           
           <a
             href={WAITLIST_URL}
-            className="inline-flex w-full justify-center text-base font-semibold text-black bg-white px-8 py-4 rounded-xl hover:bg-zinc-200 transition-colors"
+            className="inline-flex w-full justify-center text-base font-semibold text-white bg-[#0071e3] px-8 py-4 rounded-xl hover:bg-[#005bb8] transition-colors"
           >
             Get Founding Circle access
           </a>
@@ -348,7 +348,7 @@ function FinalCTA() {
         <div className="flex flex-col items-center gap-6">
           <a
             href={WAITLIST_URL}
-            className="inline-flex justify-center text-lg font-semibold text-black bg-white px-10 py-5 rounded-full hover:bg-zinc-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.15)]"
+            className="inline-flex justify-center text-lg font-semibold text-white bg-[#0071e3] px-10 py-5 rounded-full hover:bg-[#005bb8] transition-colors shadow-[0_0_40px_rgba(0,113,227,0.2)] hover:shadow-[0_0_60px_rgba(0,113,227,0.3)]"
           >
             Join the Founding Circle
           </a>
