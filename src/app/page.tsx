@@ -160,9 +160,9 @@ function CtaButton({ children, href, className = "" }: { children: React.ReactNo
         animate={cardControls}
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-30 rounded-xl" />
-        <div className="text-foreground font-bold tracking-[0.2em] text-2xl uppercase mb-2">Tayz</div>
+        <div className="text-white font-bold tracking-[0.2em] text-2xl uppercase mb-2">Tayz</div>
         <div className="w-8 h-[2px] bg-[#0071e3] mb-4"></div>
-        <div className="text-foreground/60 font-sans tracking-widest text-xs uppercase">Your Name</div>
+        <div className="text-white/60 font-sans tracking-widest text-xs uppercase">Your Name</div>
       </motion.div>
     </div>
   );
@@ -529,7 +529,7 @@ function PricingOffer() {
 
 function FinalCTA() {
   return (
-    <section className="py-32 bg-gradient-to-b from-[#141414] to-[#0a0a0a]">
+    <section className="py-32 bg-gradient-to-b from-section-alt to-background">
       <div className="container mx-auto px-6 max-w-4xl text-center">
         <FadeIn>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-8">
