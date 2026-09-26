@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
@@ -567,7 +567,7 @@ function StoryboardFaq() {
     },
     {
       question: "Can I update my details after ordering?",
-      answer: "Yes, always. Your Tayz card links to a dynamic digital profile. You can update your job title, links, and contact info instantly through your dashboard - no need to buy a new card."
+      answer: "Yes, always. Your Tayz card links to a dynamic digital profile. You can update your job title, links, and contact info instantly through your dashboard without having to buy a new card."
     },
     {
       question: "Are there any subscription fees?",
