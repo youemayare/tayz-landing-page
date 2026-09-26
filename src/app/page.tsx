@@ -185,7 +185,7 @@ function StoryboardHero() {
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <div className="inline-flex flex-col sm:flex-row gap-4 items-center">
                 <CtaButton
                   href={WAITLIST_URL}
                   className="text-base px-8 py-4 rounded-full"
