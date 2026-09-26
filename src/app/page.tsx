@@ -227,7 +227,7 @@ function StoryboardCards() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="text-xl text-muted max-w-2xl mx-auto">
-            Choose from our collection of premium finishes. We recommend keeping it simple with just your name â€” so your card stays relevant even if your company or role changes. 
+            Choose from our collection of premium finishes. We recommend keeping it simple with just your name - so your card stays relevant even if your company or role changes. 
           </p>
           <p className="text-sm mt-4 text-secondary">
             Looking for custom company logos, colors or designs? Contact our team for custom orders.
@@ -567,7 +567,7 @@ function StoryboardFaq() {
     },
     {
       question: "Can I update my details after ordering?",
-      answer: "Yes, always. Your Tayz card links to a dynamic digital profile. You can update your job title, links, and contact info instantly through your dashboard â€” no need to buy a new card."
+      answer: "Yes, always. Your Tayz card links to a dynamic digital profile. You can update your job title, links, and contact info instantly through your dashboard - no need to buy a new card."
     },
     {
       question: "Are there any subscription fees?",
@@ -579,7 +579,7 @@ function StoryboardFaq() {
     },
     {
       question: "What if there is no internet connection?",
-      answer: "If you or the other person are completely offline, you can present your Offline QR code. When scanned, it instantly saves your contact card to their phone â€” no internet required!"
+      answer: "If you or the other person are completely offline, you can present your Offline QR code. When scanned, it instantly saves your contact card to their phone - no internet required!"
     },
     {
       question: "Can I get a custom logo on my card?",
