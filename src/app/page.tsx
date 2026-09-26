@@ -268,7 +268,7 @@ function StoryboardStyles() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-xl text-muted max-w-2xl mx-auto">
-              Structurally distinct layouts crafted for different professions, not just simple color swaps. Find the one that matches your vibe.
+              Choose from structurally distinct layouts and unlock deep customizability. Mix fonts, structures & styles to find one that matches your vibe.
             </p>
           </FadeIn>
         </div>
