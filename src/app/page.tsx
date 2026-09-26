@@ -178,7 +178,7 @@ function StoryboardHero() {
               </h1>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="text-xl text-zinc-400 mb-10 leading-relaxed">
+              <p className="text-justify text-xl text-zinc-400 mb-10 leading-relaxed">
                 A premium metal card that opens your live professional profile with a tap or scan. Share who you are, stay up to date, and make every introduction count.
               </p>
             </FadeIn>
@@ -190,7 +190,7 @@ function StoryboardHero() {
                 >
                   Get Founding Circle access
                 </CtaButton>
-                <p className="text-sm text-zinc-500 font-medium">Exclusive early-bird pricing</p>
+                <p className="text-justify text-sm text-zinc-500 font-medium">Exclusive early-bird pricing</p>
               </div>
             </FadeIn>
           </div>
@@ -217,17 +217,17 @@ function StoryboardCards() {
 
   return (
     <section className="py-24 bg-[#0a0a0a] overflow-hidden relative">
-      <div className="container mx-auto px-6 max-w-6xl mb-12 text-center">
+      <div className="container mx-auto px-6 max-w-6xl mb-12 text-justify">
         <FadeIn>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
             Timeless metal.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-justify text-xl text-zinc-400 max-w-2xl mx-auto">
             Choose from our collection of premium finishes. We recommend keeping it simple with just your nameâ€”so your card stays relevant even if your company or role changes. 
           </p>
-          <p className="text-sm mt-4 text-zinc-500">
+          <p className="text-justify text-sm mt-4 text-zinc-500">
             Looking for custom company logos, colors or designs? Contact our team for custom orders.
           </p>
         </FadeIn>
@@ -258,14 +258,14 @@ function StoryboardStyles() {
   return (
     <section className="py-24 bg-[#141414] border-y border-white/5">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-16">
+        <div className="text-justify mb-16">
           <FadeIn>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
               A profile that feels like you.
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-justify text-xl text-zinc-400 max-w-2xl mx-auto">
               Structurally distinct layouts crafted for different professions, not just simple color swaps. Find the one that matches your vibe.
             </p>
           </FadeIn>
@@ -297,7 +297,7 @@ function StoryboardEditor() {
               </h2>
             </FadeIn>
             <FadeIn direction="left" delay={0.1}>
-              <p className="text-xl text-zinc-400 leading-relaxed">
+              <p className="text-justify text-xl text-zinc-400 leading-relaxed">
                 Refine your digital presence in seconds. Change your bio, update your contact details, and swap layouts effortlessly. Every change you make in the editor reflects instantly on your live profile.
               </p>
             </FadeIn>
@@ -311,14 +311,14 @@ function StoryboardEditor() {
 function StoryboardUpdate() {
   return (
     <section className="py-24 bg-[#141414] border-y border-white/5 overflow-hidden">
-      <div className="container mx-auto px-6 max-w-6xl text-center">
+      <div className="container mx-auto px-6 max-w-6xl text-justify">
         <FadeIn>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
             Always current.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-16">
+          <p className="text-justify text-xl text-zinc-400 max-w-2xl mx-auto mb-16">
             Got promoted? Change your title in the dashboard. The next person who taps your card sees the update instantly.
           </p>
         </FadeIn>
@@ -358,7 +358,7 @@ function StoryboardCompatibility() {
   return (
     <section className="py-24 bg-[#141414] border-y border-white/5 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,113,227,0.05)_0%,transparent_50%)]" />
-      <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
+      <div className="container mx-auto px-6 max-w-4xl text-justify relative z-10">
         <FadeIn>
           <div className="flex items-center justify-center gap-12 mb-10">
             <svg className="w-16 h-16 text-white/70 hover:text-white transition-colors duration-300" viewBox="0 0 384 512" fill="currentColor">
@@ -376,7 +376,7 @@ function StoryboardCompatibility() {
           </h2>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-justify text-xl text-zinc-400 max-w-2xl mx-auto">
             Tayz works instantly out of the box with almost all modern smartphones. Whether they use an iPhone or an Android, a single tap or scan is all it takes to share your profile. 
           </p>
         </FadeIn>
@@ -394,14 +394,14 @@ function StoryboardShare() {
 
   return (
     <section className="py-24">
-      <div className="container mx-auto px-6 max-w-4xl text-center">
+      <div className="container mx-auto px-6 max-w-4xl text-justify">
         <FadeIn>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
             Share it your way.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-zinc-400 mb-12">
+          <p className="text-justify text-xl text-zinc-400 mb-12">
             Whether you are in a boardroom, at a conference, or networking online, Tayz adapts to how you introduce yourself.
           </p>
         </FadeIn>
@@ -409,7 +409,7 @@ function StoryboardShare() {
           {methods.map((method, i) => (
             <FadeIn key={method.title} delay={0.2 + (i * 0.1)} direction="up" className="p-8 rounded-3xl bg-[#141414] border border-white/5 hover:border-white/20 transition-colors duration-300 group">
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#0071e3] transition-colors">{method.title}</h3>
-              <p className="text-zinc-400">{method.desc}</p>
+              <p className="text-justify text-zinc-400">{method.desc}</p>
             </FadeIn>
           ))}
         </div>
@@ -430,7 +430,7 @@ function StoryboardConnections() {
               </h2>
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
-              <p className="text-xl text-zinc-400 leading-relaxed mb-6">
+              <p className="text-justify text-xl text-zinc-400 leading-relaxed mb-6">
                 When you exchange details, their information is saved directly to your Connections dashboard. Never lose track of a meaningful encounter again. You can add notes, collect leads & more.
               </p>
             </FadeIn>
@@ -459,7 +459,7 @@ function StoryboardAnalytics() {
               </h2>
             </FadeIn>
             <FadeIn direction="left" delay={0.1}>
-              <p className="text-xl text-zinc-400 leading-relaxed">
+              <p className="text-justify text-xl text-zinc-400 leading-relaxed">
                 See profile visits and link activity in your dashboard. Understand unique views and where your connections are happening in real-time. Make every interaction measurable.
               </p>
             </FadeIn>
@@ -474,7 +474,7 @@ function PricingOffer() {
   return (
     <section id="founding-offer" className="py-24 bg-[#141414] border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0071e3]/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
+      <div className="container mx-auto px-6 max-w-4xl text-justify relative z-10">
         <FadeIn>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-12">
             Be among the first to carry Tayz.
@@ -497,7 +497,7 @@ function PricingOffer() {
               </motion.div>
             </div>
 
-            <p className="text-zinc-400 leading-relaxed mb-8">
+            <p className="text-justify text-zinc-400 leading-relaxed mb-8">
               Join the Founding Circle for early access to the Tayz Metal Card at an exclusive discounted price. We'll notify you when Tayz is ready to launch. Joining is free, and you can decide whether to order then.
             </p>
 
@@ -517,14 +517,14 @@ function PricingOffer() {
 function FinalCTA() {
   return (
     <section className="py-32 bg-gradient-to-b from-[#141414] to-[#0a0a0a]">
-      <div className="container mx-auto px-6 max-w-4xl text-center">
+      <div className="container mx-auto px-6 max-w-4xl text-justify">
         <FadeIn>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
             Make your next introduction count.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-lg md:text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-justify text-lg md:text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
             Join the Tayz Founding Circle for access to the Metal Card at an exclusive early-bird discount of approximately 40% off the planned regular price.
           </p>
         </FadeIn>
@@ -536,7 +536,7 @@ function FinalCTA() {
             >
               Join the Founding Circle
             </CtaButton>
-            <p className="text-sm text-zinc-500 max-w-sm mx-auto">
+            <p className="text-justify text-sm text-zinc-500 max-w-sm mx-auto">
               Free to join. We'll notify you when Tayz launches. No payment today and no obligation to buy.
             </p>
           </div>
@@ -577,7 +577,7 @@ function StoryboardFaq() {
   return (
     <section className="py-24 bg-[#141414] border-t border-white/5 relative z-10">
       <div className="container mx-auto px-6 max-w-3xl">
-        <FadeIn className="text-center mb-16">
+        <FadeIn className="text-justify mb-16">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
             Frequently asked questions
           </h2>
@@ -588,7 +588,7 @@ function StoryboardFaq() {
             <FadeIn key={idx} delay={idx * 0.1} direction="up">
               <div className="bg-[#0a0a0a] rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-colors">
                 <h3 className="text-xl font-medium text-white mb-3">{faq.question}</h3>
-                <p className="text-zinc-400 leading-relaxed">{faq.answer}</p>
+                <p className="text-justify text-zinc-400 leading-relaxed">{faq.answer}</p>
               </div>
             </FadeIn>
           ))}
