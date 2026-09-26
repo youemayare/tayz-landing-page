@@ -60,13 +60,13 @@
   --color-card-bg: var(--card-bg);
   --color-nav-bg: var(--nav-bg);
   --color-shadow-glow: var(--shadow-glow);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-geist);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -74,4 +74,12 @@ body {
 ::selection {
   background: var(--color-brand-500);
   color: #fff;
+}
+.landing-page {
+  --background: #ffffff;
+  --foreground: #09090b;
+}
+.dark .landing-page {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
 }
