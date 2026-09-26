@@ -362,11 +362,10 @@ function StoryboardCompatibility() {
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-8 items-center">
           
           <FadeIn direction="right" className="relative w-full max-w-sm mx-auto lg:max-w-none aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-            <Image src="/iphone-tap.jpg" alt="Tapping top front of iPhone" fill className="object-cover" />
+            <Image src="/iphone-tap.jpg" alt="Tapping iPhone" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
             <div className="absolute bottom-6 left-0 right-0 text-center flex flex-col items-center">
-              <svg className="w-8 h-8 text-white mb-2" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-              <span className="text-white font-medium">Top front</span>
+              <svg className="w-10 h-10 text-white" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
             </div>
           </FadeIn>
 
@@ -378,17 +377,16 @@ function StoryboardCompatibility() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="text-xl text-zinc-400 max-w-sm mx-auto">
-                Tayz works instantly out of the box. Just tap the top front of an iPhone or the top-middle back of an Android. No app installation needed.
+                Tayz works instantly out of the box. Just tap an iPhone or Android to share your profile. No app installation needed.
               </p>
             </FadeIn>
           </div>
 
           <FadeIn direction="left" className="relative w-full max-w-sm mx-auto lg:max-w-none aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-            <Image src="/android-tap.jpg" alt="Tapping top middle back of Android" fill className="object-cover" />
+            <Image src="/android-tap.jpg" alt="Tapping Android" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
             <div className="absolute bottom-6 left-0 right-0 text-center flex flex-col items-center">
-              <svg className="w-9 h-9 text-white mb-2" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm-138.6 0c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm205.6-111.4l35.8-61.9c3.4-5.9 1-13.4-4.8-16.8-5.9-3.4-13.4-1-16.8 4.8l-36.9 63.8c-34.1-15.6-72.2-24.4-112.5-24.4s-78.4 8.8-112.5 24.4l-36.9-63.8c-3.4-5.9-10.9-8.2-16.8-4.8-5.9 3.4-8.2 10.9-4.8 16.8l35.8 61.9c-85 41-144.1 123.6-150.1 219.7H493c-6-96.1-65.1-178.7-150.1-219.7z"/></svg>
-              <span className="text-white font-medium">Top-middle back</span>
+              <svg className="w-11 h-11 text-white" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm-138.6 0c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm205.6-111.4l35.8-61.9c3.4-5.9 1-13.4-4.8-16.8-5.9-3.4-13.4-1-16.8 4.8l-36.9 63.8c-34.1-15.6-72.2-24.4-112.5-24.4s-78.4 8.8-112.5 24.4l-36.9-63.8c-3.4-5.9-10.9-8.2-16.8-4.8-5.9 3.4-8.2 10.9-4.8 16.8l35.8 61.9c-85 41-144.1 123.6-150.1 219.7H493c-6-96.1-65.1-178.7-150.1-219.7z"/></svg>
             </div>
           </FadeIn>
 
