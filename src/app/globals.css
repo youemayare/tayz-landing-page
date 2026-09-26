@@ -1,9 +1,21 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
-  --background: #0a0a0a;
-  --foreground: #fcfcfc;
-  --graphite: #1a1a1a;
+  --background: #ffffff;
+  --foreground: #09090b;
+  --section-alt: #f9fafb;
+  --text-muted: #52525b; 
+  --text-secondary: #71717a; 
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-medium: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.2);
+  --gradient-overlay: rgba(255, 255, 255, 0.9);
+  --card-bg: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --shadow-glow: rgba(0, 0, 0, 0.05);
+
   --metallic-accent: linear-gradient(135deg, #d4af37, #fdf6e3, #d4af37);
   --metallic-gray: linear-gradient(135deg, #71717a, #e4e4e7, #71717a);
   
@@ -20,9 +32,34 @@
   --color-brand-950: #032a52;
 }
 
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --section-alt: #141414;
+  --text-muted: #a1a1aa; 
+  --text-secondary: #71717a; 
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --gradient-overlay: rgba(0, 0, 0, 0.9);
+  --card-bg: #0a0a0a;
+  --nav-bg: rgba(10, 10, 10, 0.8);
+  --shadow-glow: rgba(255, 255, 255, 0.1);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-section-alt: var(--section-alt);
+  --color-muted: var(--text-muted);
+  --color-secondary: var(--text-secondary);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-medium: var(--border-medium);
+  --color-border-strong: var(--border-strong);
+  --color-gradient-overlay: var(--gradient-overlay);
+  --color-card-bg: var(--card-bg);
+  --color-nav-bg: var(--nav-bg);
+  --color-shadow-glow: var(--shadow-glow);
   --font-sans: var(--font-inter);
 }
 
@@ -35,6 +72,6 @@ body {
 }
 
 ::selection {
-  background: #333;
+  background: var(--color-brand-500);
   color: #fff;
 }

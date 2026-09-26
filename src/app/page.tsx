@@ -6,6 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import { useState, useEffect } from 'react';
 import { WAITLIST_URL } from '@/lib/constants';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 function FadeIn({ children, delay = 0, direction = 'up', className = '' }: { children: React.ReactNode, delay?: number, direction?: 'up' | 'down' | 'left' | 'right' | 'none', className?: string }) {
   const yOffset = direction === 'up' ? 40 : direction === 'down' ? -40 : 0;
@@ -28,7 +29,7 @@ function CtaButton({ children, href, className = "" }: { children: React.ReactNo
   return (
     <motion.a
       href={href}
-      className={`relative inline-flex items-center justify-center overflow-hidden font-semibold text-white bg-[#0071e3] transition-colors hover:bg-[#005bb8] shadow-[0_0_40px_rgba(0,113,227,0.2)] hover:shadow-[0_0_60px_rgba(0,113,227,0.4)] ${className}`}
+      className={`relative inline-flex items-center justify-center overflow-hidden font-semibold text-foreground bg-[#0071e3] transition-colors hover:bg-[#005bb8] shadow-[0_0_40px_rgba(0,113,227,0.2)] hover:shadow-[0_0_60px_rgba(0,113,227,0.4)] ${className}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
@@ -44,30 +45,31 @@ function CtaButton({ children, href, className = "" }: { children: React.ReactNo
   );
 }
 
-function Header() {
-  return (
-    <motion.header
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className="w-full border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md sticky top-0 z-50"
-    >
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="text-xl font-bold tracking-tight text-white">TAYZ</div>
-        <div>
-          <CtaButton
-            href={WAITLIST_URL}
-            className="text-sm px-4 py-2 rounded-full"
-          >
-            Join the Founding Circle
-          </CtaButton>
+  function Header() {
+    return (
+      <motion.header
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="w-full border-b border-border-subtle bg-nav-bg backdrop-blur-md sticky top-0 z-50"
+      >
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="text-xl font-bold tracking-tight text-foreground">TAYZ</div>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <CtaButton
+              href={WAITLIST_URL}
+              className="text-sm px-4 py-2 rounded-full"
+            >
+              Join the Founding Circle
+            </CtaButton>
+          </div>
         </div>
-      </div>
-    </motion.header>
-  );
-}
+      </motion.header>
+    );
+  }
 
-function HeroVisual() {
+  function HeroVisual() {
   const cardControls = useAnimation();
   const screenControls = useAnimation();
   const [isTapped, setIsTapped] = useState(false);
@@ -143,7 +145,7 @@ function HeroVisual() {
 
       {/* Matte Black Metal Card */}
       <motion.div
-        className="absolute top-1/2 left-1/2 w-[80%] aspect-[1.586] bg-gradient-to-br from-[#2a2a2a] via-[#111] to-[#000] rounded-xl border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex flex-col justify-center items-center z-20 pointer-events-none"
+        className="absolute top-1/2 left-1/2 w-[80%] aspect-[1.586] bg-gradient-to-br from-[#2a2a2a] via-[#111] to-[#000] rounded-xl border border-border-medium shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex flex-col justify-center items-center z-20 pointer-events-none"
         style={{ transformStyle: "preserve-3d" }}
         initial={{
           y: "-80%",
@@ -158,9 +160,9 @@ function HeroVisual() {
         animate={cardControls}
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-30 rounded-xl" />
-        <div className="text-white font-bold tracking-[0.2em] text-2xl uppercase mb-2">Tayz</div>
+        <div className="text-foreground font-bold tracking-[0.2em] text-2xl uppercase mb-2">Tayz</div>
         <div className="w-8 h-[2px] bg-[#0071e3] mb-4"></div>
-        <div className="text-white/60 font-sans tracking-widest text-xs uppercase">Your Name</div>
+        <div className="text-foreground/60 font-sans tracking-widest text-xs uppercase">Your Name</div>
       </motion.div>
     </div>
   );
@@ -173,12 +175,12 @@ function StoryboardHero() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="max-w-2xl">
             <FadeIn>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
                 One tap.<br />They know you.
               </h1>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="text-xl text-zinc-400 mb-10 leading-relaxed">
+              <p className="text-xl text-muted mb-10 leading-relaxed">
                 A premium metal card that opens your live professional profile with a tap or scan. Share who you are, stay up to date, and make every introduction count.
               </p>
             </FadeIn>
@@ -190,7 +192,7 @@ function StoryboardHero() {
                 >
                   Get Founding Circle access
                 </CtaButton>
-                <p className="text-sm text-zinc-500 font-medium">Exclusive early-bird pricing</p>
+                <p className="text-sm text-secondary font-medium">Exclusive early-bird pricing</p>
               </div>
             </FadeIn>
           </div>
@@ -216,18 +218,18 @@ function StoryboardCards() {
   ];
 
   return (
-    <section className="py-24 bg-[#0a0a0a] overflow-hidden relative">
+    <section className="py-24 bg-background overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-6xl mb-12 text-center">
         <FadeIn>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Timeless metal.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Choose from our collection of premium finishes. We recommend keeping it simple with just your name — so your card stays relevant even if your company or role changes. 
+          <p className="text-xl text-muted max-w-2xl mx-auto">
+            Choose from our collection of premium finishes. We recommend keeping it simple with just your name â€” so your card stays relevant even if your company or role changes. 
           </p>
-          <p className="text-sm mt-4 text-zinc-500">
+          <p className="text-sm mt-4 text-secondary">
             Looking for custom company logos, colors or designs? Contact our team for custom orders.
           </p>
         </FadeIn>
@@ -240,10 +242,10 @@ function StoryboardCards() {
               key={card.id}
               className="flex-[0_0_85vw] sm:flex-[0_0_500px] md:flex-[0_0_600px] min-w-0 flex flex-col items-center gap-6 px-4 md:px-8 group/card"
             >
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-white/10 group-hover/card:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover/card:border-white/20 transition-all duration-500 select-none">
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-border-medium group-hover/card:shadow-[0_0_60px_rgba(255,255,255,0.1)] group-hover/card:border-border-strong transition-all duration-500 select-none">
                 <Image src={card.src} alt={card.name} fill className="object-cover group-hover/card:scale-105 transition-transform duration-1000 pointer-events-none" draggable={false} />
               </div>
-              <div className="text-lg font-medium text-zinc-400 group-hover/card:text-white transition-colors duration-300">
+              <div className="text-lg font-medium text-muted group-hover/card:text-foreground transition-colors duration-300">
                 {card.name}
               </div>
             </div>
@@ -256,23 +258,23 @@ function StoryboardCards() {
 
 function StoryboardStyles() {
   return (
-    <section className="py-24 bg-[#141414] border-y border-white/5">
+    <section className="py-24 bg-section-alt border-y border-border-subtle">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
               A profile that feels like you.
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted max-w-2xl mx-auto">
               Structurally distinct layouts crafted for different professions, not just simple color swaps. Find the one that matches your vibe.
             </p>
           </FadeIn>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {['canvas', 'classic', 'identity', 'professional'].map((theme, i) => (
-            <FadeIn key={theme} delay={i * 0.1} direction="up" className="relative aspect-[9/19.5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group hover:border-white/30 transition-colors duration-300">
+            <FadeIn key={theme} delay={i * 0.1} direction="up" className="relative aspect-[9/19.5] rounded-2xl overflow-hidden border border-border-medium shadow-2xl group hover:border-white/30 transition-colors duration-300">
               <Image src={`/storyboard/layout-${theme}.png`} alt={`Tayz ${theme} layout`} fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
             </FadeIn>
           ))}
@@ -287,17 +289,17 @@ function StoryboardEditor() {
     <section className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
+          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-border-medium shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
             <Image src="/storyboard/editor.png" alt="Tayz Profile Editor" fill className="object-cover object-top" />
           </FadeIn>
           <div className="order-1 md:order-2">
             <FadeIn direction="left">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
                 Make every detail yours.
               </h2>
             </FadeIn>
             <FadeIn direction="left" delay={0.1}>
-              <p className="text-xl text-zinc-400 leading-relaxed">
+              <p className="text-xl text-muted leading-relaxed">
                 Refine your digital presence in seconds. Change your bio, update your contact details, and swap layouts effortlessly. Every change you make in the editor reflects instantly on your live profile.
               </p>
             </FadeIn>
@@ -310,21 +312,21 @@ function StoryboardEditor() {
 
 function StoryboardUpdate() {
   return (
-    <section className="py-24 bg-[#141414] border-y border-white/5 overflow-hidden">
+    <section className="py-24 bg-section-alt border-y border-border-subtle overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl text-center">
         <FadeIn>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Always current.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-16">
+          <p className="text-xl text-muted max-w-2xl mx-auto mb-16">
             Got promoted? Change your title in the dashboard. The next person who taps your card sees the update instantly.
           </p>
         </FadeIn>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
-          <FadeIn direction="right" delay={0.2} className="relative w-full max-w-[240px] lg:max-w-[260px] aspect-[9/19.5] rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
-            <div className="absolute top-4 left-4 bg-zinc-900/80 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-zinc-400 z-10 border border-white/10">Before</div>
+          <FadeIn direction="right" delay={0.2} className="relative w-full max-w-[240px] lg:max-w-[260px] aspect-[9/19.5] rounded-2xl border border-border-medium overflow-hidden shadow-2xl">
+            <div className="absolute top-4 left-4 bg-zinc-900/80 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-muted z-10 border border-border-medium">Before</div>
             <Image src="/storyboard/hero.png" alt="Before update" fill className="object-cover object-top grayscale-[30%] opacity-80" />
           </FadeIn>
 
@@ -345,7 +347,7 @@ function StoryboardUpdate() {
           </FadeIn>
 
           <FadeIn direction="left" delay={0.6} className="relative w-full max-w-[240px] lg:max-w-[260px] aspect-[9/19.5] rounded-2xl border border-[#0071e3]/40 overflow-hidden shadow-[0_0_80px_rgba(0,113,227,0.2)]">
-            <div className="absolute top-4 left-4 bg-[#0071e3] px-3 py-1 rounded-full text-xs font-semibold text-white z-10">After</div>
+            <div className="absolute top-4 left-4 bg-[#0071e3] px-3 py-1 rounded-full text-xs font-semibold text-foreground z-10">After</div>
             <Image src="/storyboard/after-update.png" alt="After update" fill className="object-cover object-top" />
           </FadeIn>
         </div>
@@ -356,37 +358,37 @@ function StoryboardUpdate() {
 
 function StoryboardCompatibility() {
   return (
-    <section className="py-24 bg-[#141414] border-y border-white/5 relative overflow-hidden">
+    <section className="py-24 bg-section-alt border-y border-border-subtle relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,113,227,0.05)_0%,transparent_50%)]" />
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-8 items-center">
           
-          <FadeIn direction="right" className="relative w-full max-w-sm mx-auto lg:max-w-none aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+          <FadeIn direction="right" className="relative w-full max-w-sm mx-auto lg:max-w-none aspect-[3/4] rounded-3xl overflow-hidden border border-border-medium shadow-xl">
             <Image src="/iphone-tap.jpg" alt="Tapping iPhone" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
             <div className="absolute bottom-6 left-0 right-0 text-center flex flex-col items-center">
-              <svg className="w-10 h-10 text-white" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <svg className="w-10 h-10 text-foreground" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
             </div>
           </FadeIn>
 
           <div className="text-center order-first lg:order-none mb-8 lg:mb-0">
             <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
                 Universal<br />compatibility.
               </h2>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="text-xl text-zinc-400 max-w-sm mx-auto">
+              <p className="text-xl text-muted max-w-sm mx-auto">
                 Tayz works instantly out of the box. Just tap an iPhone or Android to share your profile. No app installation needed.
               </p>
             </FadeIn>
           </div>
 
-          <FadeIn direction="left" className="relative w-full max-w-sm mx-auto lg:max-w-none aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+          <FadeIn direction="left" className="relative w-full max-w-sm mx-auto lg:max-w-none aspect-[3/4] rounded-3xl overflow-hidden border border-border-medium shadow-xl">
             <Image src="/android-tap.jpg" alt="Tapping Android" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
             <div className="absolute bottom-6 left-0 right-0 text-center flex flex-col items-center">
-              <svg className="w-11 h-11 text-white" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm-138.6 0c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm205.6-111.4l35.8-61.9c3.4-5.9 1-13.4-4.8-16.8-5.9-3.4-13.4-1-16.8 4.8l-36.9 63.8c-34.1-15.6-72.2-24.4-112.5-24.4s-78.4 8.8-112.5 24.4l-36.9-63.8c-3.4-5.9-10.9-8.2-16.8-4.8-5.9 3.4-8.2 10.9-4.8 16.8l35.8 61.9c-85 41-144.1 123.6-150.1 219.7H493c-6-96.1-65.1-178.7-150.1-219.7z"/></svg>
+              <svg className="w-11 h-11 text-foreground" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm-138.6 0c-25.7 0-46.5-20.8-46.5-46.5s20.8-46.5 46.5-46.5 46.5 20.8 46.5 46.5-20.8 46.5-46.5 46.5zm205.6-111.4l35.8-61.9c3.4-5.9 1-13.4-4.8-16.8-5.9-3.4-13.4-1-16.8 4.8l-36.9 63.8c-34.1-15.6-72.2-24.4-112.5-24.4s-78.4 8.8-112.5 24.4l-36.9-63.8c-3.4-5.9-10.9-8.2-16.8-4.8-5.9 3.4-8.2 10.9-4.8 16.8l35.8 61.9c-85 41-144.1 123.6-150.1 219.7H493c-6-96.1-65.1-178.7-150.1-219.7z"/></svg>
             </div>
           </FadeIn>
 
@@ -407,20 +409,20 @@ function StoryboardShare() {
     <section className="py-24">
       <div className="container mx-auto px-6 max-w-4xl text-center">
         <FadeIn>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Share it your way.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-zinc-400 mb-12">
+          <p className="text-xl text-muted mb-12">
             Whether you are in a boardroom, at a conference, or networking online, Tayz adapts to how you introduce yourself.
           </p>
         </FadeIn>
         <div className="grid md:grid-cols-3 gap-8">
           {methods.map((method, i) => (
-            <FadeIn key={method.title} delay={0.2 + (i * 0.1)} direction="up" className="p-8 rounded-3xl bg-[#141414] border border-white/5 hover:border-white/20 transition-colors duration-300 group">
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#0071e3] transition-colors">{method.title}</h3>
-              <p className="text-zinc-400">{method.desc}</p>
+            <FadeIn key={method.title} delay={0.2 + (i * 0.1)} direction="up" className="p-8 rounded-3xl bg-section-alt border border-border-subtle hover:border-border-strong transition-colors duration-300 group">
+              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[#0071e3] transition-colors">{method.title}</h3>
+              <p className="text-muted">{method.desc}</p>
             </FadeIn>
           ))}
         </div>
@@ -431,22 +433,22 @@ function StoryboardShare() {
 
 function StoryboardConnections() {
   return (
-    <section className="py-24 bg-[#141414] border-y border-white/5">
+    <section className="py-24 bg-section-alt border-y border-border-subtle">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <FadeIn direction="right">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
                 Remember the people you meet.
               </h2>
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
-              <p className="text-xl text-zinc-400 leading-relaxed mb-6">
+              <p className="text-xl text-muted leading-relaxed mb-6">
                 When you exchange details, their information is saved directly to your Connections dashboard. Never lose track of a meaningful encounter again. You can add notes, collect leads & more.
               </p>
             </FadeIn>
           </div>
-          <FadeIn direction="left" delay={0.2} className="relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
+          <FadeIn direction="left" delay={0.2} className="relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-border-medium shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
             <Image src="/storyboard/connections.png" alt="Tayz Connections" fill className="object-cover object-top" />
           </FadeIn>
         </div>
@@ -460,17 +462,17 @@ function StoryboardAnalytics() {
     <section className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
+          <FadeIn direction="right" className="order-2 md:order-1 relative aspect-[9/19.5] max-w-[280px] mx-auto w-full rounded-2xl overflow-hidden border border-border-medium shadow-[0_0_50px_rgba(255,255,255,0.02)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-shadow duration-500">
             <Image src="/storyboard/analytics.png" alt="Tayz Analytics" fill className="object-cover object-top" />
           </FadeIn>
           <div className="order-1 md:order-2">
             <FadeIn direction="left">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
                 Know what's working.
               </h2>
             </FadeIn>
             <FadeIn direction="left" delay={0.1}>
-              <p className="text-xl text-zinc-400 leading-relaxed">
+              <p className="text-xl text-muted leading-relaxed">
                 See profile visits and link activity in your dashboard. Understand unique views and where your connections are happening in real-time. Make every interaction measurable.
               </p>
             </FadeIn>
@@ -483,20 +485,20 @@ function StoryboardAnalytics() {
 
 function PricingOffer() {
   return (
-    <section id="founding-offer" className="py-24 bg-[#141414] border-t border-white/5 relative overflow-hidden">
+    <section id="founding-offer" className="py-24 bg-section-alt border-t border-border-subtle relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0071e3]/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
         <FadeIn>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-12">
             Be among the first to carry Tayz.
           </h2>
         </FadeIn>
 
-        <FadeIn delay={0.2} direction="up" className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 md:p-12 max-w-2xl mx-auto shadow-2xl relative overflow-hidden group">
+        <FadeIn delay={0.2} direction="up" className="bg-background border border-border-medium rounded-3xl p-8 md:p-12 max-w-2xl mx-auto shadow-2xl relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="relative z-10">
-            <div className="flex flex-col items-center mb-8 pb-8 border-b border-white/5">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Founding Circle Membership</h3>
+            <div className="flex flex-col items-center mb-8 pb-8 border-b border-border-subtle">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Founding Circle Membership</h3>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="mt-2 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0071e3]/10 border border-[#0071e3]/20 text-[#60a5fa] font-medium text-sm"
@@ -508,7 +510,7 @@ function PricingOffer() {
               </motion.div>
             </div>
 
-            <p className="text-zinc-400 leading-relaxed mb-8">
+            <p className="text-muted leading-relaxed mb-8">
               Join the Founding Circle for early access to the Tayz Metal Card at an exclusive discounted price. We'll notify you when Tayz is ready to launch. Joining is free, and you can decide whether to order then.
             </p>
 
@@ -530,12 +532,12 @@ function FinalCTA() {
     <section className="py-32 bg-gradient-to-b from-[#141414] to-[#0a0a0a]">
       <div className="container mx-auto px-6 max-w-4xl text-center">
         <FadeIn>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-8">
             Make your next introduction count.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-lg md:text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted mb-12 max-w-2xl mx-auto">
             Join the Tayz Founding Circle for access to the Metal Card at an exclusive early-bird discount of approximately 40% off the planned regular price.
           </p>
         </FadeIn>
@@ -547,7 +549,7 @@ function FinalCTA() {
             >
               Join the Founding Circle
             </CtaButton>
-            <p className="text-sm text-zinc-500 max-w-sm mx-auto">
+            <p className="text-sm text-secondary max-w-sm mx-auto">
               Free to join. We'll notify you when Tayz launches. No payment today and no obligation to buy.
             </p>
           </div>
@@ -565,7 +567,7 @@ function StoryboardFaq() {
     },
     {
       question: "Can I update my details after ordering?",
-      answer: "Yes, always. Your Tayz card links to a dynamic digital profile. You can update your job title, links, and contact info instantly through your dashboard — no need to buy a new card."
+      answer: "Yes, always. Your Tayz card links to a dynamic digital profile. You can update your job title, links, and contact info instantly through your dashboard â€” no need to buy a new card."
     },
     {
       question: "Are there any subscription fees?",
@@ -577,7 +579,7 @@ function StoryboardFaq() {
     },
     {
       question: "What if there is no internet connection?",
-      answer: "If you or the other person are completely offline, you can present your Offline QR code. When scanned, it instantly saves your contact card to their phone — no internet required!"
+      answer: "If you or the other person are completely offline, you can present your Offline QR code. When scanned, it instantly saves your contact card to their phone â€” no internet required!"
     },
     {
       question: "Can I get a custom logo on my card?",
@@ -586,10 +588,10 @@ function StoryboardFaq() {
   ];
 
   return (
-    <section className="py-24 bg-[#141414] border-t border-white/5 relative z-10">
+    <section className="py-24 bg-section-alt border-t border-border-subtle relative z-10">
       <div className="container mx-auto px-6 max-w-3xl">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Frequently asked questions
           </h2>
         </FadeIn>
@@ -597,9 +599,9 @@ function StoryboardFaq() {
         <div className="space-y-6">
           {faqs.map((faq, idx) => (
             <FadeIn key={idx} delay={idx * 0.1} direction="up">
-              <div className="bg-[#0a0a0a] rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-colors">
-                <h3 className="text-xl font-medium text-white mb-3">{faq.question}</h3>
-                <p className="text-zinc-400 leading-relaxed">{faq.answer}</p>
+              <div className="bg-background rounded-2xl p-6 border border-border-medium hover:border-border-strong transition-colors">
+                <h3 className="text-xl font-medium text-foreground mb-3">{faq.question}</h3>
+                <p className="text-muted leading-relaxed">{faq.answer}</p>
               </div>
             </FadeIn>
           ))}
@@ -611,10 +613,10 @@ function StoryboardFaq() {
 
 function Footer() {
   return (
-    <footer className="py-12 border-t border-white/5 bg-[#0a0a0a]">
+    <footer className="py-12 border-t border-border-subtle bg-background">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-xl font-bold tracking-tight text-white">TAYZ</div>
-        <div className="flex gap-6 text-sm text-zinc-500">
+        <div className="text-xl font-bold tracking-tight text-foreground">TAYZ</div>
+        <div className="flex gap-6 text-sm text-secondary">
           {/* Privacy Policy and Terms will go here when ready */}
         </div>
         <div className="text-sm text-zinc-600">
@@ -627,7 +629,7 @@ function Footer() {
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#0a0a0a] selection:bg-[#0071e3]/30">
+    <main className="flex flex-col min-h-screen bg-background selection:bg-[#0071e3]/30">
       <Header />
       <StoryboardHero />
       <StoryboardCards />
