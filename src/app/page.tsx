@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from 'next/image';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
@@ -62,7 +62,7 @@ function CtaButton({ children, href, className = "" }: { children: React.ReactNo
           <div className="text-xl font-bold tracking-tight text-foreground">TAYZ</div>
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <Link href="/login" className="text-sm font-semibold hover:opacity-80 transition-opacity">Sign in</Link>
+            <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold hover:opacity-80 transition-opacity">Sign in</a>
             <CtaButton
               href={WAITLIST_URL}
               className="text-sm px-4 py-2 rounded-full"
